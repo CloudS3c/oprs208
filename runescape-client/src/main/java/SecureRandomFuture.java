@@ -223,11 +223,12 @@ public class SecureRandomFuture {
 							var4 = Players.Players_pendingUpdateIndices[var3]; // L: 174
 							var5 = Client.players[var4]; // L: 175
 							var6 = var0.readUnsignedByte(); // L: 176
-							if ((var6 & 128) != 0) { // L: 177
+							if ((var6 & 128) != 0) { // @TODO Excess Flag
 								var6 += var0.readUnsignedByte() << 8;
 							}
 
 							byte var7 = class193.field2248.field2245; // L: 179
+							// Force Chat
 							if ((var6 & 8) != 0) { // L: 180
 								var5.overheadText = var0.readStringCp1252NullTerminated(); // L: 181
 								if (var5.overheadText.charAt(0) == '~') { // L: 182
@@ -242,7 +243,7 @@ public class SecureRandomFuture {
 								var5.overheadTextEffect = 0; // L: 191
 								var5.overheadTextCyclesRemaining = 150; // L: 192
 							}
-
+							// Tbh unsure :S
 							if ((var6 & 1024) != 0) { // L: 194
 								var7 = var0.readByte(); // L: 195
 							}
@@ -251,6 +252,7 @@ public class SecureRandomFuture {
 							int var11;
 							int var12;
 							int var15;
+							// Public Chat
 							if ((var6 & 1) != 0) { // L: 197
 								var8 = var0.readUnsignedShortLE(); // L: 198
 								PlayerType var9 = (PlayerType)Varps.findEnumerated(DbTableType.PlayerType_values(), var0.readUnsignedByteAdd()); // L: 199
@@ -292,6 +294,7 @@ public class SecureRandomFuture {
 							}
 
 							int var16;
+							// Hitmark
 							if ((var6 & 32) != 0) { // L: 228
 								var8 = var0.readUnsignedByte(); // L: 229
 								int var19;
@@ -336,12 +339,13 @@ public class SecureRandomFuture {
 								}
 							}
 
+							// Move speed
 							if ((var6 & 512) != 0) { // L: 266
 								class193[] var17 = Players.field1291; // L: 267
 								class193[] var18 = new class193[]{class193.field2247, class193.field2248, class193.field2246, class193.field2244}; // L: 271
 								var17[var4] = (class193)Varps.findEnumerated(var18, var0.readByte()); // L: 273
 							}
-
+							// Face tile
 							if ((var6 & 16) != 0) { // L: 275
 								var5.field1163 = var0.readUnsignedShortAddLE(); // L: 276
 								if (var5.pathLength == 0) { // L: 277
@@ -349,7 +353,7 @@ public class SecureRandomFuture {
 									var5.field1163 = -1; // L: 279
 								}
 							}
-
+							// Force Movement
 							if ((var6 & 16384) != 0) { // L: 282
 								var5.field1192 = var0.readByteAdd(); // L: 283
 								var5.field1181 = var0.readByte(); // L: 284
@@ -375,6 +379,7 @@ public class SecureRandomFuture {
 								var5.field1202 = 0; // L: 304
 							}
 
+							// face pawn
 							if ((var6 & 2) != 0) { // L: 306
 								var5.targetIndex = var0.readUnsignedShortAdd(); // L: 307
 								if (var5.targetIndex == 65535) { // L: 308
@@ -382,6 +387,7 @@ public class SecureRandomFuture {
 								}
 							}
 
+							// Apply Tint
 							if ((var6 & 2048) != 0) { // L: 310
 								var5.field1188 = Client.cycle + var0.readUnsignedShortAdd(); // L: 311
 								var5.field1158 = Client.cycle + var0.readUnsignedShortAddLE(); // L: 312
@@ -390,7 +396,7 @@ public class SecureRandomFuture {
 								var5.field1169 = var0.readByteSub(); // L: 315
 								var5.field1194 = (byte)var0.readUnsignedByteSub(); // L: 316
 							}
-
+							// Appearance
 							if ((var6 & 4) != 0) { // L: 318
 								var8 = var0.readUnsignedByteSub(); // L: 319
 								byte[] var21 = new byte[var8]; // L: 320
@@ -399,7 +405,7 @@ public class SecureRandomFuture {
 								Players.field1292[var4] = var26; // L: 323
 								var5.read(var26); // L: 324
 							}
-
+							// gfx
 							if ((var6 & 256) != 0) { // L: 326
 								var5.spotAnimation = var0.readUnsignedShort(); // L: 327
 								var8 = var0.readUnsignedIntME(); // L: 328
@@ -415,13 +421,13 @@ public class SecureRandomFuture {
 									var5.spotAnimation = -1;
 								}
 							}
-
+							// Context Menu
 							if ((var6 & 8192) != 0) { // L: 336
 								for (var8 = 0; var8 < 3; ++var8) { // L: 337
 									var5.actions[var8] = var0.readStringCp1252NullTerminated();
 								}
 							}
-
+							// Animation
 							if ((var6 & 64) != 0) { // L: 339
 								var8 = var0.readUnsignedShortLE(); // L: 340
 								if (var8 == 65535) { // L: 341
