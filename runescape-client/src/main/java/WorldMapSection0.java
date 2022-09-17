@@ -299,7 +299,7 @@ public class WorldMapSection0 implements WorldMapSection {
 			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1); // L: 11978
 			if (var3.rank == -1) { // L: 11979
 				String var4 = var3.username.getName(); // L: 11980
-				PacketBufferNode var5 = class120.getPacketBufferNode(ClientPacket.field3025, Client.packetWriter.isaacCipher); // L: 11981
+				PacketBufferNode var5 = class120.getPacketBufferNode(ClientPacket._CLANCHANNEL_KICKUSER, Client.packetWriter.isaacCipher); // L: 11981
 				var5.packetBuffer.writeByte(3 + class357.stringCp1252NullTerminatedByteSize(var4)); // L: 11982
 				var5.packetBuffer.writeByte(var0); // L: 11983
 				var5.packetBuffer.writeShort(var1); // L: 11984

@@ -273,7 +273,7 @@ public class FontName {
 		garbageValue = "3"
 	)
 	static void method7595() {
-		Client.packetWriter.addNode(class120.getPacketBufferNode(ClientPacket.OPOBJ4, Client.packetWriter.isaacCipher)); // L: 12143
+		Client.packetWriter.addNode(class120.getPacketBufferNode(ClientPacket._EXIT_FREECAM, Client.packetWriter.isaacCipher)); // L: 12143
 		Client.oculusOrbState = 0; // L: 12144
 	} // L: 12145
 }

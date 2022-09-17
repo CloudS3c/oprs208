@@ -288,7 +288,7 @@ public class BufferedSource implements Runnable {
 					int var10 = var8 * var5 - var4 * var7 >> 11; // L: 3591
 					int var11 = var9 + class67.localPlayer.x >> 7; // L: 3592
 					int var12 = class67.localPlayer.y - var10 >> 7; // L: 3593
-					PacketBufferNode var13 = class120.getPacketBufferNode(ClientPacket.field2977, Client.packetWriter.isaacCipher); // L: 3595
+					PacketBufferNode var13 = class120.getPacketBufferNode(ClientPacket._MOVE_MINIMAPCLICK, Client.packetWriter.isaacCipher); // L: 3595
 					var13.packetBuffer.writeByte(18); // L: 3596
 					var13.packetBuffer.writeShortAdd(class128.baseX * 64 + var11); // L: 3597
 					var13.packetBuffer.writeShort(WorldMapData_1.baseY * 64 + var12); // L: 3598

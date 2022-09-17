@@ -162,7 +162,7 @@ public class FriendSystem {
 				} else if (this.isIgnored(var2)) { // L: 100
 					ClientPreferences.method2400(var1); // L: 101
 				} else {
-					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher); // L: 106
+					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket._FRIENDLIST_ADD, Client.packetWriter.isaacCipher); // L: 106
 					var3.packetBuffer.writeByte(class357.stringCp1252NullTerminatedByteSize(var1)); // L: 107
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1); // L: 108
 					Client.packetWriter.addNode(var3); // L: 109
@@ -203,7 +203,7 @@ public class FriendSystem {
 				} else if (this.isFriended(var2, false)) { // L: 155
 					class145.method3227(var1); // L: 156
 				} else {
-					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket.field3037, Client.packetWriter.isaacCipher); // L: 161
+					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket._IGNORELIST_ADD, Client.packetWriter.isaacCipher); // L: 161
 					var3.packetBuffer.writeByte(class357.stringCp1252NullTerminatedByteSize(var1)); // L: 162
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1); // L: 163
 					Client.packetWriter.addNode(var3); // L: 164
@@ -234,7 +234,7 @@ public class FriendSystem {
 			if (var2.hasCleanName()) { // L: 199
 				if (this.friendsList.removeByUsername(var2)) { // L: 200
 					WorldMapLabel.method5119(); // L: 201
-					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket.OPNPC1, Client.packetWriter.isaacCipher); // L: 203
+					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket._FRIENDLIST_DEL, Client.packetWriter.isaacCipher); // L: 203
 					var3.packetBuffer.writeByte(class357.stringCp1252NullTerminatedByteSize(var1)); // L: 204
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1); // L: 205
 					Client.packetWriter.addNode(var3); // L: 206
@@ -257,7 +257,7 @@ public class FriendSystem {
 			if (var2.hasCleanName()) { // L: 214
 				if (this.ignoreList.removeByUsername(var2)) { // L: 215
 					WorldMapLabel.method5119(); // L: 216
-					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket.OPPLAYER8, Client.packetWriter.isaacCipher); // L: 218
+					PacketBufferNode var3 = class120.getPacketBufferNode(ClientPacket._IGNORELIST_DEL, Client.packetWriter.isaacCipher); // L: 218
 					var3.packetBuffer.writeByte(class357.stringCp1252NullTerminatedByteSize(var1)); // L: 219
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1); // L: 220
 					Client.packetWriter.addNode(var3); // L: 221
