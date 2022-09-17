@@ -56,20 +56,21 @@ public class WorldMapLabel {
 			NPC var3 = Client.npcs[var2]; // L: 7968
 			int var4 = var0.readUnsignedByte(); // L: 7969
 			int var5;
+			// @TODO
 			if (WorldMapSectionType.field2826 && (var4 & 1) != 0) { // L: 7970
 				var5 = var0.readUnsignedByte(); // L: 7971
 				var4 += var5 << 8; // L: 7972
 			}
-
+			// Force Chat
 			if ((var4 & 64) != 0) { // L: 7974
 				var3.overheadText = var0.readStringCp1252NullTerminated(); // L: 7975
 				var3.overheadTextCyclesRemaining = 100; // L: 7976
 			}
-
+			// Override level
 			if ((var4 & 512) != 0) { // L: 7978
 				var3.field1203 = var0.readUnsignedIntIME(); // L: 7979
 			}
-
+			// Gfx
 			if ((var4 & 4) != 0) { // L: 7981
 				var3.spotAnimation = var0.readUnsignedShortAddLE(); // L: 7982
 				var5 = var0.readUnsignedIntIME(); // L: 7983
@@ -89,6 +90,7 @@ public class WorldMapLabel {
 			int var6;
 			int var7;
 			int var8;
+			// Hitmark
 			if ((var4 & 2) != 0) { // L: 7991
 				var5 = var0.readUnsignedByteAdd(); // L: 7992
 				int var9;
@@ -132,7 +134,7 @@ public class WorldMapLabel {
 					}
 				}
 			}
-
+			// Appearance
 			if ((var4 & 16) != 0) { // L: 8029
 				var3.definition = class193.getNpcDefinition(var0.readUnsignedShortLE()); // L: 8030
 				var3.field1131 = var3.definition.size * 235857927; // L: 8031
@@ -145,7 +147,7 @@ public class WorldMapLabel {
 				var3.turnLeftSequence = var3.definition.turnLeftSequence; // L: 8038
 				var3.turnRightSequence = var3.definition.turnRightSequence; // L: 8039
 			}
-
+			// Apply tint
 			if ((var4 & 256) != 0) { // L: 8041
 				var3.field1188 = Client.cycle + var0.readUnsignedShortAddLE(); // L: 8042
 				var3.field1158 = Client.cycle + var0.readUnsignedShortAddLE(); // L: 8043
@@ -154,7 +156,7 @@ public class WorldMapLabel {
 				var3.field1169 = var0.readByteNeg(); // L: 8046
 				var3.field1194 = (byte)var0.readUnsignedByte(); // L: 8047
 			}
-
+			// Force Movement
 			if (WorldMapSectionType.field2826 && (var4 & 2048) != 0 || !WorldMapSectionType.field2826 && (var4 & 1) != 0) { // L: 8049
 				var3.field1192 = var0.readByte(); // L: 8050
 				var3.field1181 = var0.readByteAdd(); // L: 8051
@@ -170,7 +172,7 @@ public class WorldMapLabel {
 				var3.field1180 += var3.pathX[0]; // L: 8061
 				var3.field1140 += var3.pathY[0]; // L: 8062
 			}
-
+			// Animation
 			if ((var4 & 32) != 0) { // L: 8064
 				var5 = var0.readUnsignedShort(); // L: 8065
 				if (var5 == 65535) { // L: 8066
@@ -199,11 +201,11 @@ public class WorldMapLabel {
 					var3.field1202 = var3.pathLength; // L: 8088
 				}
 			}
-
+			// Name Change?
 			if ((var4 & 1024) != 0) { // L: 8092
 				var3.method2513(var0.readStringCp1252NullTerminated()); // L: 8093
 			}
-
+			// @TODO
 			if ((var4 & 8) != 0) { // L: 8095
 				var5 = var0.readUnsignedShortLE(); // L: 8096
 				var6 = var0.readUnsignedShortAddLE(); // L: 8097
@@ -217,7 +219,7 @@ public class WorldMapLabel {
 					var3.field1163 = (int)(Math.atan2((double)var7, (double)var8) * 325.949D) & 2047;
 				}
 			}
-
+			// Face Pawn
 			if ((var4 & 128) != 0) { // L: 8105
 				var3.targetIndex = var0.readUnsignedShortLE(); // L: 8106
 				if (var3.targetIndex == 65535) { // L: 8107
