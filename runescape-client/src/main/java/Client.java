@@ -3951,7 +3951,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.field3077 == var1.serverPacket) { // L: 6021
-					SoundSystem.method813(class264.field3052); // L: 6022
+					SoundSystem.processZoneUpdate(ZoneUpdate.OBJ_COUNT); // L: 6022
 					var1.serverPacket = null; // L: 6023
 					return true; // L: 6024
 				}
@@ -3967,7 +3967,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.NPC_INFO_SMALL_VIEWPORT_1 == var1.serverPacket) { // L: 6034
-					SoundSystem.method813(class264.field3046); // L: 6035
+					SoundSystem.processZoneUpdate(ZoneUpdate.MAPPROJ_ANIM); // L: 6035
 					var1.serverPacket = null; // L: 6036
 					return true; // L: 6037
 				}
@@ -4176,7 +4176,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.UPDATE_ZONE_FULL_FOLLOWS == var1.serverPacket) { // L: 6210
-					SoundSystem.method813(class264.field3054); // L: 6211
+					SoundSystem.processZoneUpdate(ZoneUpdate.PREFETCH_GAMEOBJECTS); // L: 6211
 					var1.serverPacket = null; // L: 6212
 					return true; // L: 6213
 				}
@@ -4197,8 +4197,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.NPC_SPOTANIM == var1.serverPacket) { // L: 6225
-					class392.field4456 = var3.readUnsignedByteNeg(); // L: 6226
-					ItemComposition.field2163 = var3.readUnsignedByteAdd(); // L: 6227
+					class392.Zone_Y = var3.readUnsignedByteNeg(); // L: 6226
+					ItemComposition.ZONE_X = var3.readUnsignedByteAdd(); // L: 6227
 					var1.serverPacket = null; // L: 6228
 					return true; // L: 6229
 				}
@@ -4267,13 +4267,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.HINT_ARROW == var1.serverPacket) { // L: 6278
-					ItemComposition.field2163 = var3.readUnsignedByteNeg(); // L: 6279
-					class392.field4456 = var3.readUnsignedByte(); // L: 6280
+					ItemComposition.ZONE_X = var3.readUnsignedByteNeg(); // L: 6279
+					class392.Zone_Y = var3.readUnsignedByte(); // L: 6280
 
 					while (var3.offset < var1.serverPacketLength) { // L: 6281
 						var20 = var3.readUnsignedByte(); // L: 6282
-						class264 var77 = ItemComposition.method3911()[var20]; // L: 6283
-						SoundSystem.method813(var77); // L: 6284
+						ZoneUpdate var77 = ItemComposition.method3911()[var20]; // L: 6283
+						SoundSystem.processZoneUpdate(var77); // L: 6284
 					}
 
 					var1.serverPacket = null; // L: 6286
@@ -4281,7 +4281,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				Widget var71;
-				if (ServerPacket.UPDATE_REBOOT_TIMER == var1.serverPacket) { // L: 6289
+				if (ServerPacket._UPDATE_INV_CLEAR == var1.serverPacket) { // L: 6289
 					var20 = var3.readUnsignedIntME(); // L: 6290
 					var71 = SpotAnimationDefinition.getWidget(var20); // L: 6291
 
@@ -4296,7 +4296,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				boolean var52;
-				if (ServerPacket.field3121 == var1.serverPacket) { // L: 6300
+				if (ServerPacket._MESSAGE_GAME == var1.serverPacket) { // L: 6300
 					var20 = var3.readUShortSmart(); // L: 6301
 					var52 = var3.readUnsignedByte() == 1; // L: 6302
 					var64 = ""; // L: 6303
@@ -4317,7 +4317,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6312
 				}
 
-				if (ServerPacket.REBUILD_NORMAL == var1.serverPacket) { // L: 6314
+				if (ServerPacket._IF_SETANIM == var1.serverPacket) { // L: 6314
 					var20 = var3.readShort(); // L: 6315
 					var5 = var3.readInt(); // L: 6316
 					var6 = SpotAnimationDefinition.getWidget(var5); // L: 6317
@@ -4332,13 +4332,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6325
 				}
 
-				if (ServerPacket.MESSAGE_GAME == var1.serverPacket) { // L: 6327
+				if (ServerPacket._REBUILD_REGION == var1.serverPacket) { // L: 6327
 					class114.loadRegions(true, var1.packetBuffer); // L: 6328
 					var1.serverPacket = null; // L: 6329
 					return true; // L: 6330
 				}
 
-				if (ServerPacket.UPDATE_INV_PARTIAL == var1.serverPacket) { // L: 6332
+				if (ServerPacket._MIDI_SONG == var1.serverPacket) { // L: 6332
 					var20 = var3.readUnsignedShortAddLE(); // L: 6333
 					if (var20 == 65535) { // L: 6334
 						var20 = -1;
@@ -4349,7 +4349,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6337
 				}
 
-				if (ServerPacket.MINIMAP_TOGGLE == var1.serverPacket) { // L: 6339
+				if (ServerPacket._MIDI_JINGLE == var1.serverPacket) { // L: 6339
 					var20 = var3.readUnsignedShortAdd(); // L: 6340
 					if (var20 == 65535) { // L: 6341
 						var20 = -1;
@@ -4361,13 +4361,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6345
 				}
 
-				if (ServerPacket.field3125 == var1.serverPacket) { // L: 6347
+				if (ServerPacket.CHAT_FILTER_SETTINGS_PRIVATECHAT == var1.serverPacket) { // L: 6347
 					class142.privateChatMode = ChatChannel.method2146(var3.readUnsignedByte()); // L: 6348
 					var1.serverPacket = null; // L: 6349
 					return true; // L: 6350
 				}
 
-				if (ServerPacket.UPDATE_IGNORELIST == var1.serverPacket) { // L: 6352
+				if (ServerPacket._LEGACY_NPC_INFO_SMALL == var1.serverPacket) { // L: 6352
 					class386.updateNpcs(false, var3); // L: 6353
 					var1.serverPacket = null; // L: 6354
 					return true; // L: 6355
@@ -4427,21 +4427,21 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6394
 				}
 
-				if (ServerPacket.field3082 == var1.serverPacket) { // L: 6396
+				if (ServerPacket._PLAYER_INFO == var1.serverPacket) { // L: 6396
 					SecureRandomFuture.updatePlayers(var3, var1.serverPacketLength); // L: 6397
 					SpriteMask.method5688(); // L: 6398
 					var1.serverPacket = null; // L: 6399
 					return true; // L: 6400
 				}
 
-				if (ServerPacket.field3075 == var1.serverPacket) { // L: 6402
+				if (ServerPacket._FRIENDLIST_LOADED == var1.serverPacket) { // L: 6402
 					Varps.friendSystem.method1785(); // L: 6403
 					field700 = cycleCntr; // L: 6404
 					var1.serverPacket = null; // L: 6405
 					return true; // L: 6406
 				}
 
-				if (ServerPacket.UPDATE_INV_CLEAR == var1.serverPacket) { // L: 6408
+				if (ServerPacket._UPDATE_INV_PARTIAL == var1.serverPacket) { // L: 6408
 					var20 = var3.readInt(); // L: 6409
 					var5 = var3.readUnsignedShort(); // L: 6410
 					if (var20 < -70000) { // L: 6411
@@ -4504,7 +4504,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6449
 				}
 
-				if (ServerPacket.field3140 == var1.serverPacket) { // L: 6451
+				if (ServerPacket._CAM_SHAKE == var1.serverPacket) { // L: 6451
 					var20 = var3.readUnsignedByte(); // L: 6452
 					var5 = var3.readUnsignedByte(); // L: 6453
 					var21 = var3.readUnsignedByte(); // L: 6454
@@ -4519,7 +4519,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				boolean var76;
-				if (ServerPacket.UPDATE_INV_FULL == var1.serverPacket) { // L: 6464
+				if (ServerPacket._TRADING_POST_RESULTS == var1.serverPacket) { // L: 6464
 					var76 = var3.readUnsignedByte() == 1; // L: 6465
 					if (var76) { // L: 6466
 						SceneTilePaint.field2649 = Language.method6232() - var3.readLong(); // L: 6467
@@ -4533,7 +4533,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6473
 				}
 
-				if (ServerPacket.MESSAGE_PRIVATE_ECHO == var1.serverPacket) { // L: 6475
+				if (ServerPacket._CLANCHANNEL_DELTA == var1.serverPacket) { // L: 6475
 					field745 = cycleCntr; // L: 6476
 					var79 = var3.readByte(); // L: 6477
 					class146 var75 = new class146(var3); // L: 6478
@@ -4549,7 +4549,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6484
 				}
 
-				if (ServerPacket.DYNAMICOBJECT_SPAWN == var1.serverPacket) { // L: 6486
+				if (ServerPacket._PLAYER_SPOTANIM_SPECIFIC == var1.serverPacket) { // L: 6486
 					var20 = var3.readUnsignedShortAdd(); // L: 6491
 					Player var92;
 					if (var20 == localPlayerIndex) { // L: 6492
@@ -4579,7 +4579,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6514
 				}
 
-				if (ServerPacket.field3113 == var1.serverPacket) { // L: 6516
+				if (ServerPacket._IF_SETEVENTS == var1.serverPacket) { // L: 6516
 					var20 = var3.readUnsignedShort(); // L: 6517
 					if (var20 == 65535) { // L: 6518
 						var20 = -1;
@@ -4607,7 +4607,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6530
 				}
 
-				if (ServerPacket.field3154 == var1.serverPacket) { // L: 6532
+				if (ServerPacket._CLANSETTINGS_FULL == var1.serverPacket) { // L: 6532
 					UserComparator3.method2766(); // L: 6533
 					var79 = var3.readByte(); // L: 6534
 					if (var1.serverPacketLength == 1) { // L: 6535
@@ -4631,13 +4631,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6548
 				}
 
-				if (ServerPacket.RESET_CLIENT_VARCACHE == var1.serverPacket) { // L: 6550
-					SoundSystem.method813(class264.field3056); // L: 6551
+				if (ServerPacket._AREA_SOUND == var1.serverPacket) { // L: 6550
+					SoundSystem.processZoneUpdate(ZoneUpdate.AREA_SOUND); // L: 6551
 					var1.serverPacket = null; // L: 6552
 					return true; // L: 6553
 				}
 
-				if (ServerPacket.MESSAGE_PRIVATE == var1.serverPacket) { // L: 6555
+				if (ServerPacket._CAM_LOOKAT == var1.serverPacket) { // L: 6555
 					isCameraLocked = true; // L: 6556
 					field544 = false; // L: 6557
 					class119.field1479 = var3.readUnsignedByte() * 128; // L: 6558
@@ -4668,13 +4668,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6577
 				}
 
-				if (ServerPacket.UPDATE_INV_STOP_TRANSIT == var1.serverPacket) { // L: 6579
-					SoundSystem.method813(class264.field3057); // L: 6580
+				if (ServerPacket._MAP_ANIM == var1.serverPacket) { // L: 6579
+					SoundSystem.processZoneUpdate(ZoneUpdate.MAP_ANIM); // L: 6580
 					var1.serverPacket = null; // L: 6581
 					return true; // L: 6582
 				}
 
-				if (ServerPacket.field3081 == var1.serverPacket) { // L: 6584
+				if (ServerPacket._TOGGLE_OCULUS_ORB == var1.serverPacket) { // L: 6584
 					var20 = var3.readInt(); // L: 6585
 					if (var20 != field754) { // L: 6586
 						field754 = var20; // L: 6587
@@ -4685,20 +4685,20 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6591
 				}
 
-				if (ServerPacket.IF_CLOSESUB == var1.serverPacket) { // L: 6593
+				if (ServerPacket._NPC_INFO_LARGE == var1.serverPacket) { // L: 6593
 					WorldMapSectionType.field2826 = true; // L: 6594
 					class386.updateNpcs(true, var3); // L: 6595
 					var1.serverPacket = null; // L: 6596
 					return true; // L: 6597
 				}
 
-				if (ServerPacket.IF_SETPLAYERHEAD == var1.serverPacket) { // L: 6599
-					SoundSystem.method813(class264.field3047); // L: 6600
+				if (ServerPacket._OBJ_ADD == var1.serverPacket) { // L: 6599
+					SoundSystem.processZoneUpdate(ZoneUpdate.OBJ_ADD); // L: 6600
 					var1.serverPacket = null; // L: 6601
 					return true; // L: 6602
 				}
 
-				if (ServerPacket.UPDATE_FRIENDLIST == var1.serverPacket) { // L: 6604
+				if (ServerPacket._TRADING_POST_UPDATE == var1.serverPacket) { // L: 6604
 					var20 = var3.readUnsignedByte(); // L: 6605
 					if (var3.readUnsignedByte() == 0) { // L: 6606
 						grandExchangeOffers[var20] = new GrandExchangeOffer(); // L: 6607
@@ -4713,18 +4713,18 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6616
 				}
 
-				if (ServerPacket.field3084 == var1.serverPacket) { // L: 6618
+				if (ServerPacket._LOGOUT_FULL == var1.serverPacket) { // L: 6618
 					ApproximateRouteStrategy.logOut(); // L: 6619
 					var1.serverPacket = null; // L: 6620
 					return false; // L: 6621
 				}
 
-				if (ServerPacket.field3124 == var1.serverPacket) { // L: 6623
-					ItemComposition.field2163 = var3.readUnsignedByte(); // L: 6624
-					class392.field4456 = var3.readUnsignedByteAdd(); // L: 6625
+				if (ServerPacket._UPDATE_ZONE_FULL_FOLLOWS == var1.serverPacket) { // L: 6623
+					ItemComposition.ZONE_X = var3.readUnsignedByte(); // L: 6624
+					class392.Zone_Y = var3.readUnsignedByteAdd(); // L: 6625
 
-					for (var20 = class392.field4456; var20 < class392.field4456 + 8; ++var20) { // L: 6626
-						for (var5 = ItemComposition.field2163; var5 < ItemComposition.field2163 + 8; ++var5) { // L: 6627
+					for (var20 = class392.Zone_Y; var20 < class392.Zone_Y + 8; ++var20) { // L: 6626
+						for (var5 = ItemComposition.ZONE_X; var5 < ItemComposition.ZONE_X + 8; ++var5) { // L: 6627
 							if (groundItems[Tiles.Client_plane][var20][var5] != null) { // L: 6628
 								groundItems[Tiles.Client_plane][var20][var5] = null; // L: 6629
 								Friend.updateItemPile(var20, var5); // L: 6630
@@ -4733,7 +4733,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					}
 
 					for (PendingSpawn var53 = (PendingSpawn)pendingSpawns.last(); var53 != null; var53 = (PendingSpawn)pendingSpawns.previous()) { // L: 6634 6635 6637
-						if (var53.x >= class392.field4456 && var53.x < class392.field4456 + 8 && var53.y >= ItemComposition.field2163 && var53.y < ItemComposition.field2163 + 8 && var53.plane == Tiles.Client_plane) { // L: 6636
+						if (var53.x >= class392.Zone_Y && var53.x < class392.Zone_Y + 8 && var53.y >= ItemComposition.ZONE_X && var53.y < ItemComposition.ZONE_X + 8 && var53.plane == Tiles.Client_plane) { // L: 6636
 							var53.hitpoints = 0;
 						}
 					}
@@ -4742,7 +4742,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6640
 				}
 
-				if (ServerPacket.VARP_LARGE == var1.serverPacket) { // L: 6642
+				if (ServerPacket._IF_SETCOLOUR == var1.serverPacket) { // L: 6642
 					var20 = var3.readInt(); // L: 6643
 					var5 = var3.readUnsignedShortAddLE(); // L: 6644
 					var21 = var5 >> 10 & 31; // L: 6645
@@ -4759,7 +4759,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6655
 				}
 
-				if (ServerPacket.PING_STATISTICS_REQUEST == var1.serverPacket) { // L: 6657
+				if (ServerPacket._CLANCHANNEL_FULL == var1.serverPacket) { // L: 6657
 					field745 = cycleCntr; // L: 6658
 					var79 = var3.readByte(); // L: 6659
 					if (var1.serverPacketLength == 1) { // L: 6660
@@ -4783,7 +4783,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6673
 				}
 
-				if (ServerPacket.field3172 == var1.serverPacket) { // L: 6675
+				if (ServerPacket._IF1_MODELROTATE == var1.serverPacket) { // L: 6675
 					var20 = var3.readInt(); // L: 6676
 					var5 = var3.readUnsignedShort(); // L: 6677
 					var21 = var3.readUnsignedShort(); // L: 6678
@@ -4793,7 +4793,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6682
 				}
 
-				if (ServerPacket.IF_SETOBJECT == var1.serverPacket) { // L: 6684
+				if (ServerPacket._IF_SETPOSITION == var1.serverPacket) { // L: 6684
 					var20 = var3.readShortLE(); // L: 6685
 					var5 = var3.readInt(); // L: 6686
 					var21 = var3.readShortLE(); // L: 6687
@@ -4814,7 +4814,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6699
 				}
 
-				if (ServerPacket.LOGOUT == var1.serverPacket) { // L: 6701
+				if (ServerPacket._SET_PLAYER_OP == var1.serverPacket) { // L: 6701
 					var50 = var3.readStringCp1252NullTerminated(); // L: 6702
 					var5 = var3.readUnsignedByte(); // L: 6703
 					var21 = var3.readUnsignedByte(); // L: 6704
@@ -4831,7 +4831,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6711
 				}
 
-				if (ServerPacket.IF_SETMODEL == var1.serverPacket) { // L: 6713
+				if (ServerPacket._UPDATE_UID192 == var1.serverPacket) { // L: 6713
 					var3.offset += 28; // L: 6714
 					if (var3.checkCrc()) { // L: 6715
 						WorldMapData_1.method4979(var3, var3.offset - 28);
@@ -4841,7 +4841,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6717
 				}
 
-				if (ServerPacket.field3098 == var1.serverPacket) { // L: 6719
+				if (ServerPacket._RESET_ANIMS == var1.serverPacket) { // L: 6719
 					for (var20 = 0; var20 < players.length; ++var20) { // L: 6720
 						if (players[var20] != null) { // L: 6721
 							players[var20].sequence = -1;
@@ -4859,7 +4859,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				InterfaceParent var88;
-				if (ServerPacket.field3146 == var1.serverPacket) { // L: 6729
+				if (ServerPacket._GAMEFRAME_FULL == var1.serverPacket) { // L: 6729
 					var20 = var3.offset + var1.serverPacketLength; // L: 6730
 					var5 = var3.readUnsignedShort(); // L: 6731
 					var21 = var3.readUnsignedShort(); // L: 6732
@@ -4916,14 +4916,14 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6770
 				}
 
-				if (ServerPacket.field3083 == var1.serverPacket) { // L: 6772
+				if (ServerPacket._ENTER_FREECAM == var1.serverPacket) { // L: 6772
 					var20 = var3.readUnsignedByte(); // L: 6773
 					Projectile.method2097(var20); // L: 6774
 					var1.serverPacket = null; // L: 6775
 					return true; // L: 6776
 				}
 
-				if (ServerPacket.PLAYER_INFO == var1.serverPacket) { // L: 6778
+				if (ServerPacket._IF_SETNPCHEAD == var1.serverPacket) { // L: 6778
 					var20 = var3.readUnsignedIntME(); // L: 6779
 					var5 = var3.readUnsignedShortLE(); // L: 6780
 					var6 = SpotAnimationDefinition.getWidget(var20); // L: 6781
@@ -4937,7 +4937,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					return true; // L: 6788
 				}
 
-				if (ServerPacket.NPC_INFO_LARGE_VIEWPORT_1 == var1.serverPacket) { // L: 6790
+				if (ServerPacket._TRIGGER_ONDIALOGABORT == var1.serverPacket) { // L: 6790
 					if (rootInterface != -1) { // L: 6791
 						class18.runIntfCloseListeners(rootInterface, 0);
 					}
@@ -4962,7 +4962,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.field3176 == var1.serverPacket) { // L: 6808
-					SoundSystem.method813(class264.field3050); // L: 6809
+					SoundSystem.processZoneUpdate(ZoneUpdate.field3050); // L: 6809
 					var1.serverPacket = null; // L: 6810
 					return true; // L: 6811
 				}
@@ -5031,7 +5031,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.field3145 == var1.serverPacket) { // L: 6859
-					SoundSystem.method813(class264.field3053); // L: 6860
+					SoundSystem.processZoneUpdate(ZoneUpdate.LOC_DEL); // L: 6860
 					var1.serverPacket = null; // L: 6861
 					return true; // L: 6862
 				}
@@ -5260,7 +5260,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.MESSAGE_FRIENDS_CHAT == var1.serverPacket) { // L: 7046
-					SoundSystem.method813(class264.field3049); // L: 7047
+					SoundSystem.processZoneUpdate(ZoneUpdate.OBJ_DEL); // L: 7047
 					var1.serverPacket = null; // L: 7048
 					return true; // L: 7049
 				}
@@ -5368,7 +5368,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.SET_PLAYER_OP == var1.serverPacket) { // L: 7148
-					SoundSystem.method813(class264.field3055); // L: 7149
+					SoundSystem.processZoneUpdate(ZoneUpdate.LOC_ADD_CHANGE); // L: 7149
 					var1.serverPacket = null; // L: 7150
 					return true; // L: 7151
 				}
@@ -5382,7 +5382,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				}
 
 				if (ServerPacket.IF_SETANGLE == var1.serverPacket) { // L: 7160
-					SoundSystem.method813(class264.field3051); // L: 7161
+					SoundSystem.processZoneUpdate(ZoneUpdate.LOC_ANIM); // L: 7161
 					var1.serverPacket = null; // L: 7162
 					return true; // L: 7163
 				}

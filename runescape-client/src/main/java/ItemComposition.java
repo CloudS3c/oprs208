@@ -47,7 +47,7 @@ public class ItemComposition extends DualNode {
 	@ObfuscatedGetter(
 		intValue = -553684211
 	)
-	static int field2163;
+	static int ZONE_X;
 	@ObfuscatedName("t")
 	@ObfuscatedGetter(
 		intValue = -598837123
@@ -955,8 +955,8 @@ public class ItemComposition extends DualNode {
 		descriptor = "(I)[Ljw;",
 		garbageValue = "-1843784471"
 	)
-	public static class264[] method3911() {
-		return new class264[]{class264.field3046, class264.field3047, class264.field3057, class264.field3054, class264.field3049, class264.field3051, class264.field3052, class264.field3053, class264.field3056, class264.field3055, class264.field3050}; // L: 18
+	public static ZoneUpdate[] method3911() {
+		return new ZoneUpdate[]{ZoneUpdate.MAPPROJ_ANIM, ZoneUpdate.OBJ_ADD, ZoneUpdate.MAP_ANIM, ZoneUpdate.PREFETCH_GAMEOBJECTS, ZoneUpdate.OBJ_DEL, ZoneUpdate.LOC_ANIM, ZoneUpdate.OBJ_COUNT, ZoneUpdate.LOC_DEL, ZoneUpdate.AREA_SOUND, ZoneUpdate.LOC_ADD_CHANGE, ZoneUpdate.field3050}; // L: 18
 	}
 
 	@ObfuscatedName("w")

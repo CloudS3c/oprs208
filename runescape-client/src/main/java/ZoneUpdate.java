@@ -3,82 +3,82 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jw")
-public class class264 {
+public class ZoneUpdate {
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3046;
+	public static final ZoneUpdate MAPPROJ_ANIM;
 	@ObfuscatedName("p")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3047;
+	public static final ZoneUpdate OBJ_ADD;
 	@ObfuscatedName("f")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3057;
+	public static final ZoneUpdate MAP_ANIM;
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3054;
+	public static final ZoneUpdate PREFETCH_GAMEOBJECTS;
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3049;
+	public static final ZoneUpdate OBJ_DEL;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3051;
+	public static final ZoneUpdate LOC_ANIM;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3052;
+	public static final ZoneUpdate OBJ_COUNT;
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3053;
+	public static final ZoneUpdate LOC_DEL;
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3056;
+	public static final ZoneUpdate AREA_SOUND;
 	@ObfuscatedName("x")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3055;
+	public static final ZoneUpdate LOC_ADD_CHANGE;
 	@ObfuscatedName("j")
 	@ObfuscatedSignature(
 		descriptor = "Ljw;"
 	)
-	public static final class264 field3050;
+	public static final ZoneUpdate field3050;
 
 	static {
-		field3046 = new class264(15); // L: 5
-		field3047 = new class264(5); // L: 6
-		field3057 = new class264(6); // L: 7
-		field3054 = new class264(14); // L: 8
-		field3049 = new class264(3); // L: 9
-		field3051 = new class264(4); // L: 10
-		field3052 = new class264(7); // L: 11
-		field3053 = new class264(2); // L: 12
-		field3056 = new class264(5); // L: 13
-		field3055 = new class264(4); // L: 14
-		field3050 = new class264(5); // L: 15
+		MAPPROJ_ANIM = new ZoneUpdate(15); // L: 5
+		OBJ_ADD = new ZoneUpdate(5); // L: 6
+		MAP_ANIM = new ZoneUpdate(6); // L: 7
+		PREFETCH_GAMEOBJECTS = new ZoneUpdate(14); // L: 8
+		OBJ_DEL = new ZoneUpdate(3); // L: 9
+		LOC_ANIM = new ZoneUpdate(4); // L: 10
+		OBJ_COUNT = new ZoneUpdate(7); // L: 11
+		LOC_DEL = new ZoneUpdate(2); // L: 12
+		AREA_SOUND = new ZoneUpdate(5); // L: 13
+		LOC_ADD_CHANGE = new ZoneUpdate(4); // L: 14
+		field3050 = new ZoneUpdate(5); // L: 15
 	}
 
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
 		garbageValue = "15"
 	)
-	class264(int var1) {
+    ZoneUpdate(int var1) {
 	} // L: 21
 
 	@ObfuscatedName("jv")

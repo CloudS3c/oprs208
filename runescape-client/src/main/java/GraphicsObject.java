@@ -484,7 +484,7 @@ public class GraphicsObject extends Renderable {
 										}
 									}
 								} else if (var10.type == 3) { // L: 10001
-									if (class264.runCs1(var10)) { // L: 10003
+									if (ZoneUpdate.runCs1(var10)) { // L: 10003
 										var19 = var10.color2; // L: 10004
 										if (var10 == class148.mousedOverWidgetIf1 && var10.mouseOverColor2 != 0) { // L: 10005
 											var19 = var10.mouseOverColor2;
@@ -526,7 +526,7 @@ public class GraphicsObject extends Renderable {
 											}
 										} else {
 											String var44 = var10.text; // L: 10038
-											if (class264.runCs1(var10)) { // L: 10039
+											if (ZoneUpdate.runCs1(var10)) { // L: 10039
 												var20 = var10.color2; // L: 10040
 												if (var10 == class148.mousedOverWidgetIf1 && var10.mouseOverColor2 != 0) { // L: 10041
 													var20 = var10.mouseOverColor2;
@@ -568,7 +568,7 @@ public class GraphicsObject extends Renderable {
 									} else if (var10.type == 5) { // L: 10062
 										SpritePixels var40;
 										if (!var10.isIf3) { // L: 10063
-											var40 = var10.getSprite(class264.runCs1(var10), Messages.urlRequester); // L: 10064
+											var40 = var10.getSprite(ZoneUpdate.runCs1(var10), Messages.urlRequester); // L: 10064
 											if (var40 != null) { // L: 10065
 												var40.drawTransBgAt(var12, var13);
 											} else if (Widget.field3392) { // L: 10066
@@ -623,7 +623,7 @@ public class GraphicsObject extends Renderable {
 									} else {
 										ItemComposition var33;
 										if (var10.type == 6) { // L: 10100
-											boolean var36 = class264.runCs1(var10); // L: 10101
+											boolean var36 = ZoneUpdate.runCs1(var10); // L: 10101
 											if (var36) { // L: 10103
 												var20 = var10.sequenceId2;
 											} else {

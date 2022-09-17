@@ -406,23 +406,23 @@ public final class class269 {
 
 			if (var1 == 10) { // L: 11650
 				if (var2 == 0) { // L: 11651
-					class264.method5345(127);
+					ZoneUpdate.method5345(127);
 				}
 
 				if (var2 == 1) { // L: 11652
-					class264.method5345(96);
+					ZoneUpdate.method5345(96);
 				}
 
 				if (var2 == 2) { // L: 11653
-					class264.method5345(64);
+					ZoneUpdate.method5345(64);
 				}
 
 				if (var2 == 3) { // L: 11654
-					class264.method5345(32);
+					ZoneUpdate.method5345(32);
 				}
 
 				if (var2 == 4) { // L: 11655
-					class264.method5345(0);
+					ZoneUpdate.method5345(0);
 				}
 			}
 

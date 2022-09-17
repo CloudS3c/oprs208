@@ -1,6 +1,7 @@
 ![](https://i.imgur.com/0D5106S.png)
 
-
+# Alter
+![revision: 208](https://img.shields.io/badge/Revision-208-blueviolet) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.com/invite/sAzCuuwkpN)
 
 # OpenOSRS injected RuneLite 
 
@@ -18,8 +19,8 @@ This branch is still in bringup but most functionality works as intended.
 This branch uses upstreams PlayerManager/OverlayManager etc so keep that in mind if porting a plugin.  
   
 Contributions are welcome, but there should be no changes made to runelite-client unless necessary/minor. Mould the api around the client.
-## Discord  
 
+## OPRS Discord  
 [![Discord](https://img.shields.io/discord/373382904769675265.svg)](https://discord.gg/openosrs)
 
 ## Project Layout  

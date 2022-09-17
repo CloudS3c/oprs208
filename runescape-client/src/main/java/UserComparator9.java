@@ -291,7 +291,7 @@ public class UserComparator9 extends AbstractUserComparator {
 					case 4:
 						var5 = Math.min(Math.max(var5, 0), 100); // L: 1956
 						var6 = Math.round((float)(var5 * 127) / 100.0F); // L: 1957
-						class264.method5345(var6); // L: 1958
+						ZoneUpdate.method5345(var6); // L: 1958
 						break; // L: 1959
 					default:
 						var7 = String.format("Unkown game option: %s.", var4.toString()); // L: 1963

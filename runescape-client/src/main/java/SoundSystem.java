@@ -47,7 +47,7 @@ public class SoundSystem implements Runnable {
 		descriptor = "(Ljw;S)V",
 		garbageValue = "1126"
 	)
-	static final void method813(class264 var0) {
+	static final void processZoneUpdate(ZoneUpdate var0) {
 		PacketBuffer var1 = Client.packetWriter.packetBuffer; // L: 7363
 		int var2;
 		int var3;
@@ -63,14 +63,14 @@ public class SoundSystem implements Runnable {
 		int var37;
 		int var38;
 		int var39;
-		if (class264.field3046 == var0) { // L: 7364
+		if (ZoneUpdate.MAPPROJ_ANIM == var0) { // L: 7364
 			var2 = var1.readUnsignedShort(); // L: 7365
 			var3 = var1.readUnsignedByteNeg() * 4; // L: 7366
 			var4 = var1.readByteSub(); // L: 7367
 			var5 = var1.readUnsignedByteNeg(); // L: 7368
 			var6 = var1.readUnsignedByteNeg(); // L: 7369
-			var7 = (var6 >> 4 & 7) + class392.field4456; // L: 7370
-			var38 = (var6 & 7) + ItemComposition.field2163; // L: 7371
+			var7 = (var6 >> 4 & 7) + class392.Zone_Y; // L: 7370
+			var38 = (var6 & 7) + ItemComposition.ZONE_X; // L: 7371
 			var39 = var1.readUnsignedByteSub(); // L: 7372
 			byte var40 = var1.readByte(); // L: 7373
 			var11 = var1.readUnsignedShortAdd(); // L: 7374
@@ -90,13 +90,13 @@ public class SoundSystem implements Runnable {
 			}
 
 		} else {
-			if (class264.field3054 == var0) { // L: 7391
+			if (ZoneUpdate.PREFETCH_GAMEOBJECTS == var0) { // L: 7391
 				var2 = var1.readUnsignedShort(); // L: 7392
 				var3 = var1.readUnsignedShortAdd(); // L: 7393
 				var4 = var1.readByteSub(); // L: 7394
 				var5 = var1.readUnsignedByteSub(); // L: 7395
-				var6 = (var5 >> 4 & 7) + class392.field4456; // L: 7396
-				var7 = (var5 & 7) + ItemComposition.field2163; // L: 7397
+				var6 = (var5 >> 4 & 7) + class392.Zone_Y; // L: 7396
+				var7 = (var5 & 7) + ItemComposition.ZONE_X; // L: 7397
 				byte var8 = var1.readByteSub(); // L: 7398
 				byte var9 = var1.readByteAdd(); // L: 7399
 				var10 = var1.readUnsignedByteAdd(); // L: 7400
@@ -164,11 +164,11 @@ public class SoundSystem implements Runnable {
 			}
 
 			TileItem var41;
-			if (class264.field3049 == var0) { // L: 7456
+			if (ZoneUpdate.OBJ_DEL == var0) { // L: 7456
 				var2 = var1.readUnsignedShortAdd(); // L: 7457
 				var3 = var1.readUnsignedByteSub(); // L: 7458
-				var37 = (var3 >> 4 & 7) + class392.field4456; // L: 7459
-				var5 = (var3 & 7) + ItemComposition.field2163; // L: 7460
+				var37 = (var3 >> 4 & 7) + class392.Zone_Y; // L: 7459
+				var5 = (var3 & 7) + ItemComposition.ZONE_X; // L: 7460
 				if (var37 >= 0 && var5 >= 0 && var37 < 104 && var5 < 104) { // L: 7461
 					NodeDeque var35 = Client.groundItems[Tiles.Client_plane][var37][var5]; // L: 7462
 					if (var35 != null) { // L: 7463
@@ -187,11 +187,11 @@ public class SoundSystem implements Runnable {
 					}
 				}
 
-			} else if (class264.field3052 == var0) { // L: 7478
+			} else if (ZoneUpdate.OBJ_COUNT == var0) { // L: 7478
 				var2 = var1.readUnsignedShortAddLE(); // L: 7479
 				var3 = var1.readUnsignedByte(); // L: 7480
-				var37 = (var3 >> 4 & 7) + class392.field4456; // L: 7481
-				var5 = (var3 & 7) + ItemComposition.field2163; // L: 7482
+				var37 = (var3 >> 4 & 7) + class392.Zone_Y; // L: 7481
+				var5 = (var3 & 7) + ItemComposition.ZONE_X; // L: 7482
 				var6 = var1.readUnsignedShort(); // L: 7483
 				var7 = var1.readUnsignedShort(); // L: 7484
 				if (var37 >= 0 && var5 >= 0 && var37 < 104 && var5 < 104) { // L: 7485
@@ -208,25 +208,25 @@ public class SoundSystem implements Runnable {
 					}
 				}
 
-			} else if (class264.field3055 == var0) { // L: 7501
+			} else if (ZoneUpdate.LOC_ADD_CHANGE == var0) { // L: 7501
 				var2 = var1.readUnsignedByte(); // L: 7502
 				var3 = var2 >> 2; // L: 7503
 				var37 = var2 & 3; // L: 7504
 				var5 = Client.field564[var3]; // L: 7505
 				var6 = var1.readUnsignedShortAdd(); // L: 7506
 				var7 = var1.readUnsignedByteAdd(); // L: 7507
-				var38 = (var7 >> 4 & 7) + class392.field4456; // L: 7508
-				var39 = (var7 & 7) + ItemComposition.field2163; // L: 7509
+				var38 = (var7 >> 4 & 7) + class392.Zone_Y; // L: 7508
+				var39 = (var7 & 7) + ItemComposition.ZONE_X; // L: 7509
 				if (var38 >= 0 && var39 >= 0 && var38 < 104 && var39 < 104) { // L: 7510
 					MilliClock.updatePendingSpawn(Tiles.Client_plane, var38, var39, var5, var6, var3, var37, 0, -1); // L: 7511
 				}
 
 			} else {
-				if (class264.field3056 == var0) { // L: 7515
+				if (ZoneUpdate.AREA_SOUND == var0) { // L: 7515
 					var2 = var1.readUnsignedByte(); // L: 7516
 					var3 = var1.readUnsignedByteSub(); // L: 7517
-					var37 = (var3 >> 4 & 7) + class392.field4456; // L: 7518
-					var5 = (var3 & 7) + ItemComposition.field2163; // L: 7519
+					var37 = (var3 >> 4 & 7) + class392.Zone_Y; // L: 7518
+					var5 = (var3 & 7) + ItemComposition.ZONE_X; // L: 7519
 					var6 = var1.readUnsignedByteAdd(); // L: 7520
 					var7 = var6 >> 4 & 15; // L: 7521
 					var38 = var6 & 7; // L: 7522
@@ -244,14 +244,14 @@ public class SoundSystem implements Runnable {
 					}
 				}
 
-				if (class264.field3051 == var0) { // L: 7538
+				if (ZoneUpdate.LOC_ANIM == var0) { // L: 7538
 					var2 = var1.readUnsignedByteNeg(); // L: 7539
 					var3 = var2 >> 2; // L: 7540
 					var37 = var2 & 3; // L: 7541
 					var5 = Client.field564[var3]; // L: 7542
 					var6 = var1.readUnsignedByteAdd(); // L: 7543
-					var7 = (var6 >> 4 & 7) + class392.field4456; // L: 7544
-					var38 = (var6 & 7) + ItemComposition.field2163; // L: 7545
+					var7 = (var6 >> 4 & 7) + class392.Zone_Y; // L: 7544
+					var38 = (var6 & 7) + ItemComposition.ZONE_X; // L: 7545
 					var39 = var1.readUnsignedShortLE(); // L: 7546
 					if (var7 >= 0 && var38 >= 0 && var7 < 103 && var38 < 103) { // L: 7547
 						if (var5 == 0) { // L: 7548
@@ -305,10 +305,10 @@ public class SoundSystem implements Runnable {
 						}
 					}
 
-				} else if (class264.field3057 == var0) { // L: 7584
+				} else if (ZoneUpdate.MAP_ANIM == var0) { // L: 7584
 					var2 = var1.readUnsignedByteNeg(); // L: 7585
-					var3 = (var2 >> 4 & 7) + class392.field4456; // L: 7586
-					var37 = (var2 & 7) + ItemComposition.field2163; // L: 7587
+					var3 = (var2 >> 4 & 7) + class392.Zone_Y; // L: 7586
+					var37 = (var2 & 7) + ItemComposition.ZONE_X; // L: 7587
 					var5 = var1.readUnsignedShortAddLE(); // L: 7588
 					var6 = var1.readUnsignedShortAdd(); // L: 7589
 					var7 = var1.readUnsignedByteAdd(); // L: 7590
@@ -319,13 +319,13 @@ public class SoundSystem implements Runnable {
 						Client.graphicsObjects.addFirst(var42); // L: 7595
 					}
 
-				} else if (class264.field3050 != var0) { // L: 7599
-					if (class264.field3047 == var0) { // L: 7622
+				} else if (ZoneUpdate.field3050 != var0) { // L: 7599
+					if (ZoneUpdate.OBJ_ADD == var0) { // L: 7622
 						var2 = var1.readUnsignedShortLE(); // L: 7623
 						var3 = var1.readUnsignedShort(); // L: 7624
 						var37 = var1.readUnsignedByteAdd(); // L: 7625
-						var5 = (var37 >> 4 & 7) + class392.field4456; // L: 7626
-						var6 = (var37 & 7) + ItemComposition.field2163; // L: 7627
+						var5 = (var37 >> 4 & 7) + class392.Zone_Y; // L: 7626
+						var6 = (var37 & 7) + ItemComposition.ZONE_X; // L: 7627
 						if (var5 >= 0 && var6 >= 0 && var5 < 104 && var6 < 104) { // L: 7628
 							var41 = new TileItem(); // L: 7629
 							var41.id = var2; // L: 7630
@@ -338,14 +338,14 @@ public class SoundSystem implements Runnable {
 							Friend.updateItemPile(var5, var6); // L: 7634
 						}
 
-					} else if (class264.field3053 == var0) { // L: 7638
+					} else if (ZoneUpdate.LOC_DEL == var0) { // L: 7638
 						var2 = var1.readUnsignedByteSub(); // L: 7639
 						var3 = var2 >> 2; // L: 7640
 						var37 = var2 & 3; // L: 7641
 						var5 = Client.field564[var3]; // L: 7642
 						var6 = var1.readUnsignedByteSub(); // L: 7643
-						var7 = (var6 >> 4 & 7) + class392.field4456; // L: 7644
-						var38 = (var6 & 7) + ItemComposition.field2163; // L: 7645
+						var7 = (var6 >> 4 & 7) + class392.Zone_Y; // L: 7644
+						var38 = (var6 & 7) + ItemComposition.ZONE_X; // L: 7645
 						if (var7 >= 0 && var38 >= 0 && var7 < 104 && var38 < 104) { // L: 7646
 							MilliClock.updatePendingSpawn(Tiles.Client_plane, var7, var38, var5, -1, var3, var37, 0, -1); // L: 7647
 						}
@@ -354,8 +354,8 @@ public class SoundSystem implements Runnable {
 				} else {
 					var2 = var1.readUnsignedShortLE(); // L: 7600
 					var3 = var1.readUnsignedByteNeg(); // L: 7601
-					var37 = (var3 >> 4 & 7) + class392.field4456; // L: 7602
-					var5 = (var3 & 7) + ItemComposition.field2163; // L: 7603
+					var37 = (var3 >> 4 & 7) + class392.Zone_Y; // L: 7602
+					var5 = (var3 & 7) + ItemComposition.ZONE_X; // L: 7603
 					var6 = var1.readUnsignedShortAddLE(); // L: 7604
 					if (var37 >= 0 && var5 >= 0 && var37 < 104 && var5 < 104) { // L: 7605
 						NodeDeque var31 = Client.groundItems[Tiles.Client_plane][var37][var5]; // L: 7606

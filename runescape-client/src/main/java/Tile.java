@@ -224,7 +224,7 @@ public final class Tile extends Node {
 				if (var3.type == 6) { // L: 11529
 					int var5;
 					if (var3.sequenceId != -1 || var3.sequenceId2 != -1) { // L: 11530
-						boolean var8 = class264.runCs1(var3); // L: 11531
+						boolean var8 = ZoneUpdate.runCs1(var3); // L: 11531
 						if (var8) { // L: 11533
 							var5 = var3.sequenceId2;
 						} else {

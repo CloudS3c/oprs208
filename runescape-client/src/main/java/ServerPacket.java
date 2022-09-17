@@ -14,7 +14,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket NPC_INFO_LARGE_VIEWPORT_1 = new ServerPacket(0, 0);
+	public static final ServerPacket _TRIGGER_ONDIALOGABORT = new ServerPacket(0, 0);
 	@ObfuscatedName("p")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -49,7 +49,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3125 = new ServerPacket(7, 1);
+	public static final ServerPacket CHAT_FILTER_SETTINGS_PRIVATECHAT = new ServerPacket(7, 1);
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -64,7 +64,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3081 = new ServerPacket(10, 4);
+	public static final ServerPacket _TOGGLE_OCULUS_ORB = new ServerPacket(10, 4);
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -74,12 +74,12 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3083 = new ServerPacket(12, 1);
+	public static final ServerPacket _ENTER_FREECAM = new ServerPacket(12, 1);
 	@ObfuscatedName("t")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3084 = new ServerPacket(13, 0);
+	public static final ServerPacket _LOGOUT_FULL = new ServerPacket(13, 0);
 	@ObfuscatedName("u")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -134,7 +134,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket MESSAGE_GAME = new ServerPacket(24, -2);
+	public static final ServerPacket _REBUILD_REGION = new ServerPacket(24, -2);
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -149,7 +149,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3098 = new ServerPacket(27, 0);
+	public static final ServerPacket _RESET_ANIMS = new ServerPacket(27, 0);
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -169,7 +169,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket IF_SETOBJECT = new ServerPacket(31, 8);
+	public static final ServerPacket _IF_SETPOSITION = new ServerPacket(31, 8);
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -179,7 +179,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_IGNORELIST = new ServerPacket(33, -2);
+	public static final ServerPacket _LEGACY_NPC_INFO_SMALL = new ServerPacket(33, -2);
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -204,17 +204,17 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket PLAYER_INFO = new ServerPacket(38, 6);
+	public static final ServerPacket _IF_SETNPCHEAD = new ServerPacket(38, 6);
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_REBOOT_TIMER = new ServerPacket(39, 4);
+	public static final ServerPacket _UPDATE_INV_CLEAR = new ServerPacket(39, 4);
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3113 = new ServerPacket(40, 12);
+	public static final ServerPacket _IF_SETEVENTS = new ServerPacket(40, 12);
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -229,7 +229,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket PING_STATISTICS_REQUEST = new ServerPacket(43, -2);
+	public static final ServerPacket _CLANCHANNEL_FULL = new ServerPacket(43, -2);
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -239,7 +239,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket MESSAGE_PRIVATE = new ServerPacket(45, 6);
+	public static final ServerPacket _CAM_LOOKAT = new ServerPacket(45, 6);
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -249,7 +249,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket MESSAGE_PRIVATE_ECHO = new ServerPacket(47, -2);
+	public static final ServerPacket _CLANCHANNEL_DELTA = new ServerPacket(47, -2);
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -264,7 +264,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3121 = new ServerPacket(50, -1);
+	public static final ServerPacket _MESSAGE_GAME = new ServerPacket(50, -1);
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -279,7 +279,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3124 = new ServerPacket(53, 2);
+	public static final ServerPacket _UPDATE_ZONE_FULL_FOLLOWS = new ServerPacket(53, 2);
 	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -294,17 +294,17 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket LOGOUT = new ServerPacket(56, -1);
+	public static final ServerPacket _SET_PLAYER_OP = new ServerPacket(56, -1);
 	@ObfuscatedName("bj")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket IF_SETMODEL = new ServerPacket(57, 28);
+	public static final ServerPacket _UPDATE_UID192 = new ServerPacket(57, 28);
 	@ObfuscatedName("by")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_FRIENDLIST = new ServerPacket(58, 20);
+	public static final ServerPacket _TRADING_POST_UPDATE = new ServerPacket(58, 20);
 	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -344,12 +344,12 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket DYNAMICOBJECT_SPAWN = new ServerPacket(66, 8);
+	public static final ServerPacket _PLAYER_SPOTANIM_SPECIFIC = new ServerPacket(66, 8);
 	@ObfuscatedName("bx")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket RESET_CLIENT_VARCACHE = new ServerPacket(67, 5);
+	public static final ServerPacket _AREA_SOUND = new ServerPacket(67, 5);
 	@ObfuscatedName("be")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -359,7 +359,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3140 = new ServerPacket(69, 4);
+	public static final ServerPacket _CAM_SHAKE = new ServerPacket(69, 4);
 	@ObfuscatedName("ba")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -369,7 +369,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3172 = new ServerPacket(71, 8);
+	public static final ServerPacket _IF1_MODELROTATE = new ServerPacket(71, 8);
 	@ObfuscatedName("bb")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -379,32 +379,32 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket IF_SETPLAYERHEAD = new ServerPacket(73, 5);
+	public static final ServerPacket _OBJ_ADD = new ServerPacket(73, 5);
 	@ObfuscatedName("bm")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_INV_STOP_TRANSIT = new ServerPacket(74, 6);
+	public static final ServerPacket _MAP_ANIM = new ServerPacket(74, 6);
 	@ObfuscatedName("bq")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3146 = new ServerPacket(75, -2);
+	public static final ServerPacket _GAMEFRAME_FULL = new ServerPacket(75, -2);
 	@ObfuscatedName("bu")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_INV_CLEAR = new ServerPacket(76, -2);
+	public static final ServerPacket _UPDATE_INV_PARTIAL = new ServerPacket(76, -2);
 	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket MINIMAP_TOGGLE = new ServerPacket(77, 5);
+	public static final ServerPacket _MIDI_JINGLE = new ServerPacket(77, 5);
 	@ObfuscatedName("cy")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket VARP_LARGE = new ServerPacket(78, 6);
+	public static final ServerPacket _IF_SETCOLOUR = new ServerPacket(78, 6);
 	@ObfuscatedName("cv")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -429,7 +429,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket IF_CLOSESUB = new ServerPacket(83, -2);
+	public static final ServerPacket _NPC_INFO_LARGE = new ServerPacket(83, -2);
 	@ObfuscatedName("cl")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -439,7 +439,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_INV_FULL = new ServerPacket(85, -2);
+	public static final ServerPacket _TRADING_POST_RESULTS = new ServerPacket(85, -2);
 	@ObfuscatedName("ce")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -459,7 +459,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3082 = new ServerPacket(89, -2);
+	public static final ServerPacket _PLAYER_INFO = new ServerPacket(89, -2);
 	@ObfuscatedName("cr")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -469,7 +469,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket UPDATE_INV_PARTIAL = new ServerPacket(91, 2);
+	public static final ServerPacket _MIDI_SONG = new ServerPacket(91, 2);
 	@ObfuscatedName("ca")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -479,12 +479,12 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3075 = new ServerPacket(93, 0);
+	public static final ServerPacket _FRIENDLIST_LOADED = new ServerPacket(93, 0);
 	@ObfuscatedName("cq")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket field3154 = new ServerPacket(94, -2);
+	public static final ServerPacket _CLANSETTINGS_FULL = new ServerPacket(94, -2);
 	@ObfuscatedName("cp")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
@@ -494,7 +494,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"
 	)
-	public static final ServerPacket REBUILD_NORMAL = new ServerPacket(96, 6);
+	public static final ServerPacket _IF_SETANIM = new ServerPacket(96, 6);
 	@ObfuscatedName("ci")
 	@ObfuscatedSignature(
 			descriptor = "Ljl;"

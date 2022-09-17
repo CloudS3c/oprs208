@@ -30,7 +30,7 @@ public enum class392 implements MouseWheel {
 	@ObfuscatedGetter(
 		intValue = 1324658111
 	)
-	static int field4456;
+	static int Zone_Y;
 	@ObfuscatedName("k")
 	@ObfuscatedGetter(
 		intValue = -501705567
